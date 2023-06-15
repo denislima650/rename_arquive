@@ -1,0 +1,31 @@
+import os
+import numpy as np
+import openpyxl
+import pandas as pd
+pasta = r'C:\Users\denis.lima\Downloads\imagens\imagens\\'
+novo = ''
+
+arquivo1 = open('A1.txt')
+M = []
+for i in arquivo1.readlines():
+    M.append(i)
+
+arquivo2 = open('A2.txt')
+ID = []
+for i in arquivo2.readlines():
+    ID.append(i)
+
+lista_nova = {}
+for c in range(0, len(M)):
+    lista_nova[ID[c].strip('\n')] = M[c].strip('\n')
+
+for file_name in os.listdir(pasta):
+    old_name = pasta + file_name
+    nome_arquivo = file_name.strip('.png')
+    try:
+        novo_nome = (lista_nova[nome_arquivo])
+        novo_arquivo = pasta+novo_nome
+        os.rename(old_name, novo_arquivo)
+        print(True)
+    except:
+        print("continua")
