@@ -1,0 +1,9 @@
+import os
+new_name=''
+pasta = r'C:\Users\denis.lima\Downloads\imagens\imagens\\'
+
+for file_name in os.listdir(pasta):
+    old_name = pasta+file_name
+    new_name = file_name.strip('00000000')
+    novo = pasta+new_name
+    os.rename(old_name, novo)
