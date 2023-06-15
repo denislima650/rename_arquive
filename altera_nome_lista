@@ -1,7 +1,4 @@
 import os
-import numpy as np
-import openpyxl
-import pandas as pd
 pasta = r'C:\Users\denis.lima\Downloads\imagens\imagens\\'
 novo = ''
 
